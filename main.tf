@@ -249,6 +249,10 @@ resource "aws_lambda_function" "this" {
       CLOUDWATCH_ALARM_SCHEDULE = tostring(var.cloudwatch_alarm_schedule)
     }
   }
+  vpc_config {
+    subnet_ids         = var.subnet_ids
+    security_group_ids = var.vpc_security_group_ids
+  }
 
   tags = var.tags
 }
