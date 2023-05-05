@@ -32,6 +32,16 @@ variable "aws_regions" {
   default     = null
 }
 
+variable "vpc_security_group_ids" {
+  type        = list(string)
+  default     = null
+}
+
+variable "subnet_ids" {
+  type        = list(string)
+  default     = null
+}
+
 variable "schedule_action" {
   description = "Define schedule action to apply on resources, accepted value are 'stop or 'start"
   type        = string
